@@ -17,7 +17,7 @@
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            background-color: #f0f4f8; /* Soft blue-gray background */
+            background-color: #fef2f2; /* Soft red-50 background */
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -63,7 +63,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.07);
         }
 
         /* Thermometer liquid transition */
@@ -87,12 +87,12 @@
     <main class="w-full max-w-2xl glass-card rounded-2xl overflow-hidden flex flex-col relative" style="min-h: 85vh;">
         
         <!-- Header -->
-        <header class="bg-blue-600 text-white p-5 text-center shadow-md z-10">
+        <header class="bg-red-600 text-white p-5 text-center shadow-md z-10">
             <h1 class="text-2xl font-bold tracking-tight">지구과학 탐구: 복사 평형</h1>
-            <p class="text-blue-100 text-sm mt-1" id="stage-title">에너지의 흐름을 이해해보자</p>
+            <p class="text-red-100 text-sm mt-1" id="stage-title">에너지의 흐름을 이해해보자</p>
             
             <!-- Progress Bar -->
-            <div class="w-full bg-blue-800 rounded-full h-1.5 mt-4 overflow-hidden">
+            <div class="w-full bg-red-800 rounded-full h-1.5 mt-4 overflow-hidden">
                 <div id="progress-bar" class="bg-yellow-400 h-1.5 rounded-full transition-all duration-500 w-1/4"></div>
             </div>
         </header>
@@ -103,12 +103,12 @@
             <!-- STAGE 1: 물통 아날로그 -->
             <section id="stage-1" class="stage-section active space-y-6">
                 <div class="text-center space-y-2">
-                    <h2 class="text-xl font-bold text-blue-800">탐구 1: 물통 모델 (에너지 평형)</h2>
+                    <h2 class="text-xl font-bold text-red-800">탐구 1: 물통 모델 (에너지 평형)</h2>
                     <p class="text-gray-600 text-sm">물통에 물을 계속 틀어놓으면 어떻게 될까요?</p>
                 </div>
 
                 <!-- Animation Container -->
-                <div class="relative w-full h-64 bg-blue-50 rounded-xl flex items-center justify-center border border-blue-100 overflow-hidden">
+                <div class="relative w-full h-64 bg-red-50 rounded-xl flex items-center justify-center border border-red-100 overflow-hidden">
                     
                     <!-- Inflow Pipe -->
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-8 bg-gray-400 rounded-b-md z-10 flex justify-center">
@@ -132,11 +132,11 @@
 
                 <!-- Question Area -->
                 <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
-                    <p class="font-bold text-lg mb-4">Q. 물통의 수위가 더 이상 높아지지 않고 <span class="text-blue-600">일정하게 유지될 때</span>, 들어오는 물의 양과 나가는 물의 양은 어떤 관계일까요?</p>
+                    <p class="font-bold text-lg mb-4">Q. 물통의 수위가 더 이상 높아지지 않고 <span class="text-red-600">일정하게 유지될 때</span>, 들어오는 물의 양과 나가는 물의 양은 어떤 관계일까요?</p>
                     
                     <!-- Hint System -->
                     <div class="mb-4">
-                        <button onclick="nextHint(1)" class="text-sm bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium hover:bg-blue-200 transition-colors flex items-center gap-2">
+                        <button onclick="nextHint(1)" class="text-sm bg-red-100 text-red-700 px-4 py-2 rounded-full font-medium hover:bg-red-200 transition-colors flex items-center gap-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             힌트 보기 <span id="hint-count-1" class="bg-white px-2 py-0.5 rounded-full text-xs">0/3</span>
                         </button>
@@ -145,7 +145,7 @@
                         <div id="hint-area-1" class="mt-3 space-y-2 hidden">
                             <!-- Level 1 -->
                             <div id="h1-L1" class="hidden bg-yellow-50 p-3 rounded-lg border border-yellow-200 text-sm flex items-center gap-3">
-                                <div class="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center font-bold text-blue-500">유입=유출</div>
+                                <div class="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center font-bold text-red-500">유입=유출</div>
                                 <p>물이 차오를수록 수압이 세져서 나가는 물의 양이 증가합니다. 결국 <b class="text-red-500">들어오는 양 만큼 그대로 나가게 되면</b> 수위가 멈춥니다.</p>
                             </div>
                             <!-- Level 2 -->
@@ -158,17 +158,17 @@
                     <!-- Answer Selection (Revealed fully at Hint 3, or always visible but hinted) -->
                     <div id="answer-area-1" class="space-y-2 opacity-50 pointer-events-none transition-opacity duration-300">
                         <p class="text-sm text-gray-500 mb-2">정답을 선택하세요 (힌트 3단계에서 활성화됩니다)</p>
-                        <label class="flex items-center p-3 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors bg-white">
-                            <input type="radio" name="q1" value="같다" class="w-4 h-4 text-blue-600 form-radio">
-                            <span class="ml-3 font-medium">(1) 들어오는 양과 나가는 양이 <b class="text-blue-600">같다</b></span>
+                        <label class="flex items-center p-3 border rounded-lg hover:bg-red-50 cursor-pointer transition-colors bg-white">
+                            <input type="radio" name="q1" value="같다" class="w-4 h-4 text-red-600 form-radio">
+                            <span class="ml-3 font-medium">(1) 들어오는 양과 나가는 양이 <b class="text-red-600">같다</b></span>
                         </label>
-                        <label class="flex items-center p-3 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors bg-white">
-                            <input type="radio" name="q1" value="크다" class="w-4 h-4 text-blue-600 form-radio">
-                            <span class="ml-3 font-medium">(2) 들어오는 양이 나가는 양보다 <b class="text-blue-600">크다</b></span>
+                        <label class="flex items-center p-3 border rounded-lg hover:bg-red-50 cursor-pointer transition-colors bg-white">
+                            <input type="radio" name="q1" value="크다" class="w-4 h-4 text-red-600 form-radio">
+                            <span class="ml-3 font-medium">(2) 들어오는 양이 나가는 양보다 <b class="text-red-600">크다</b></span>
                         </label>
-                        <label class="flex items-center p-3 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors bg-white">
-                            <input type="radio" name="q1" value="작다" class="w-4 h-4 text-blue-600 form-radio">
-                            <span class="ml-3 font-medium">(3) 들어오는 양이 나가는 양보다 <b class="text-blue-600">작다</b></span>
+                        <label class="flex items-center p-3 border rounded-lg hover:bg-red-50 cursor-pointer transition-colors bg-white">
+                            <input type="radio" name="q1" value="작다" class="w-4 h-4 text-red-600 form-radio">
+                            <span class="ml-3 font-medium">(3) 들어오는 양이 나가는 양보다 <b class="text-red-600">작다</b></span>
                         </label>
                     </div>
                 </div>
@@ -382,8 +382,8 @@
                     <!-- Summary Table -->
                     <div class="space-y-4 relative z-10">
                         <div class="bg-gray-50 p-3 rounded border border-gray-200 flex flex-col">
-                            <span class="text-xs font-bold text-blue-600 mb-1">탐구 1. 물통 모델</span>
-                            <span class="text-sm">수위가 일정할 때, 들어오는 양과 나가는 양은 <b id="res-q1" class="text-lg text-blue-800 border-b border-blue-300 px-2">[ ]</b>.</span>
+                            <span class="text-xs font-bold text-red-600 mb-1">탐구 1. 물통 모델</span>
+                            <span class="text-sm">수위가 일정할 때, 들어오는 양과 나가는 양은 <b id="res-q1" class="text-lg text-red-800 border-b border-red-300 px-2">[ ]</b>.</span>
                         </div>
                         <div class="bg-gray-50 p-3 rounded border border-gray-200 flex flex-col">
                             <span class="text-xs font-bold text-red-600 mb-1">탐구 2-1. 복사 평형 도달</span>
@@ -414,7 +414,7 @@
         <!-- Footer / Navigation -->
         <footer class="bg-white border-t border-gray-200 p-4 flex justify-between items-center z-10">
             <button id="btn-prev" onclick="prevStage()" class="px-4 py-2 text-gray-500 font-medium disabled:opacity-30" disabled>이전</button>
-            <button id="btn-next" onclick="nextStage()" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold shadow transition-colors">다음 단계</button>
+            <button id="btn-next" onclick="nextStage()" class="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-bold shadow transition-colors">다음 단계</button>
         </footer>
 
     </main>
